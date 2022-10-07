@@ -1,13 +1,17 @@
 ﻿namespace TrabalhoATP_Banco
 {
+
     internal class Program
     {
+
         static void Main(string[] args)
         {
             {
                 Console.WriteLine("QUAL TIPO DE CONTA VOCÊ VAI UTILIZAR?");
                 Console.WriteLine("1 - CONTA CORRENTE \n2 - CONTA CORRENTE COM CHEQUE ESPECIAL \n3- CONTA POUPANÇA. ");
                 int tipoConta = int.Parse(Console.ReadLine());
+
+
 
                 if (tipoConta == 2)
                 {
