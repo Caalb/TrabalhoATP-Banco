@@ -91,7 +91,13 @@
                             Console.WriteLine(encerrarSimOuNao);
 
                             break;
+
+                            for (int i = 0; i < numeroConta; i++)
+                            {
+                                Console.WriteLine(i);
+                            }
                     }
+                }
 
                 }
             }
