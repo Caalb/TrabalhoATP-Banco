@@ -23,4 +23,12 @@ namespace TrabalhoATP_Banco.Modulos
             return Tuple.Create(tipoConta, saldo);
         }
     }
+    public class ContaCorrente
+    {
+
+
+    }
+
+
+
 }
