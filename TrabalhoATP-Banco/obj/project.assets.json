@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caalb\\source\\repos\\TrabalhoATP-Banco\\TrabalhoATP-Banco\\TrabalhoATP-Banco.csproj",
+      "projectUniqueName": "C:\\Users\\caalb\\Source\\Repos\\TrabalhoATP-Banco\\TrabalhoATP-Banco\\TrabalhoATP-Banco.csproj",
       "projectName": "TrabalhoATP-Banco",
-      "projectPath": "C:\\Users\\caalb\\source\\repos\\TrabalhoATP-Banco\\TrabalhoATP-Banco\\TrabalhoATP-Banco.csproj",
+      "projectPath": "C:\\Users\\caalb\\Source\\Repos\\TrabalhoATP-Banco\\TrabalhoATP-Banco\\TrabalhoATP-Banco.csproj",
       "packagesPath": "C:\\Users\\caalb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caalb\\source\\repos\\TrabalhoATP-Banco\\TrabalhoATP-Banco\\obj\\",
+      "outputPath": "C:\\Users\\caalb\\Source\\Repos\\TrabalhoATP-Banco\\TrabalhoATP-Banco\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\caalb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,27 +8,29 @@ namespace TrabalhoATP_Banco.Modulos
 {
     public class InicializacaoSistema
     {
-        public static Tuple<int, double> start()
+        public static Tuple<int, double, double> start()
         {
-            Console.WriteLine("QUAL TIPO DE CONTA VOCÊ VAI UTILIZAR?");
-            Console.WriteLine("1 - CONTA CORRENTE \n2 - CONTA CORRENTE COM CHEQUE ESPECIAL \n3 - CONTA POUPANÇA. ");
-            int tipoConta = int.Parse(Console.ReadLine());
-            if (tipoConta == 2)
+            int tipoConta;
+            do
             {
-                Console.WriteLine("LIMITE PARA CHEQUE ESPECIAL");
-            }
+                Console.WriteLine("QUAL TIPO DE CONTA VOCÊ VAI UTILIZAR?");
+                Console.WriteLine("1 - CONTA CORRENTE \n2 - CONTA CORRENTE COM CHEQUE ESPECIAL \n3 - CONTA POUPANÇA. ");
+                tipoConta = int.Parse(Console.ReadLine());
+            } while (tipoConta > 3);
 
             Console.WriteLine("QUAL O VALOR DO SALDO INICIAL?");
             double saldo = double.Parse(Console.ReadLine());
-            return Tuple.Create(tipoConta, saldo);
+
+            double limiteChequeEspecial = 0;
+            if(tipoConta == 2)
+            {
+                Console.WriteLine("QUAL LIMITE PARA CHEQUE ESPECIAL? ");
+                limiteChequeEspecial = double.Parse(Console.ReadLine());
+            }
+
+
+            
+            return Tuple.Create(tipoConta, saldo, limiteChequeEspecial);
         }
     }
-    public class ContaCorrente
-    {
-
-
-    }
-
-
-
 }
