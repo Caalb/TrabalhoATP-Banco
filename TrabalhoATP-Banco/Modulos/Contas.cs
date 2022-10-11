@@ -1,23 +1,57 @@
 ﻿using TrabalhoATP_Banco;
 
-public class Contas {
+public class Contas
+{
 
-    public static void contaCorrente(Tuple<int, double, double> tuplaResultado) {
+    public static void contaCorrente(Tuple<int, double, double> tuplaResultado)
+    {
 
         int tipoConta = tuplaResultado.Item1;
         double saldo = tuplaResultado.Item2;
         double _limiteChequeEspecial = tuplaResultado.Item3;
+        int cont = 0;
 
+        if (tipoConta == 1)
+        {
+            Console.WriteLine($"CONTA CORRENTE \nSALDO: {saldo} ");
+            
+        } else if (tipoConta == 2)
+        {
+            Console.WriteLine($"CONTA CORRENTE c/ CHEQUE ESPECIAL \nSALDO: R$ {saldo} - CHEQUE ESPECIAL:R$ {_limiteChequeEspecial} ");
+
+        } else
+        {
+            Console.WriteLine($"CONTA POUPANÇA \nSALDO: {saldo} - RENDIMENTOS: *** ");
+
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("-------------");
+        Console.WriteLine();
         Console.WriteLine("INFORME O QUE SERÁ REALIZADO NA CONTA");
-        Console.WriteLine("1 - CONSULTAR SALDO \n2 - REALIZAR SAQUE \n3 - REALIZAR DEPÓSITO \n4 - PAGAR CONTA \n5 - REALIZAR TRANSFÊRENCIA \n 0 - FINALIZAR");
-
+        Console.WriteLine("1 - CONSULTAR SALDO \n2 - REALIZAR SAQUE \n3 - REALIZAR DEPÓSITO \n4 - PAGAR CONTA \n5 - REALIZAR TRANSFÊRENCIA");
+        if (tipoConta == 2)
+        {
+            Console.WriteLine("6 - CONSULTAR CHEQUE ESPECIAL");
+        }
+        else if (tipoConta == 3)
+        {
+            Console.WriteLine("6 - CONSULTAR RENDIMENTOS");
+        }
+        Console.WriteLine("0 - FINALIZAR ");
+        
         int instrucao = int.Parse(Console.ReadLine());
+        Console.Clear();
         switch (instrucao)
         {
+
             case 1:
                 Console.WriteLine($"SEU SALDO É: {saldo}");
 
+                Console.ReadKey();
+                Console.Clear();
                 Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
+                cont++;
                 break;
             case 2:
                 Console.WriteLine("QUAL VALOR DO SAQUE?");
@@ -32,14 +66,20 @@ public class Contas {
                     saldo -= saque;
                     Console.WriteLine($"SEU SALDO ATUAL É: {saldo}");
                 }
+                Console.ReadKey();
+                Console.Clear();
                 Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
+                cont++;
                 break;
             case 3:
                 Console.WriteLine("QUAL VALOR DO DEPÓSITO?");
                 double deposito = double.Parse(Console.ReadLine());
                 saldo += deposito;
                 Console.WriteLine($"SEU SALDO ATUAL É: {saldo}");
+                Console.ReadKey();
+                Console.Clear();
                 Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
+                cont++;
                 break;
             case 4:
                 Console.WriteLine("QUAL VALOR DA CONTA QUE DESEJA PAGAR?");
@@ -55,7 +95,10 @@ public class Contas {
 
                     Console.WriteLine($"SEU SALDO ATUAL É: {saldo}");
                 }
+                Console.ReadKey();
+                Console.Clear();
                 Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
+                cont++;
                 break;
             case 5:
                 Console.WriteLine("QUAL CONTA QUE VOCÊ DESEJA REALIZAR TRANSFERÊNCIA?");
@@ -73,18 +116,25 @@ public class Contas {
                     saldo -= valorTransferencia;
                     Console.WriteLine($"TRANSFERÊNCIA REALIZADA COM SUCESSO PARA A CONTA: {numeroConta}");
                 }
+                Console.ReadKey();
+                Console.Clear();
                 Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
+                cont++;
                 break;
             case 6:
                 if (tipoConta == 2)
                 {
-                    Console.WriteLine("MOSTRAR LIMITE CHECK ESPECIAL");
-                    Console.WriteLine($"SEU LIMITE È 1000");
+                    Console.WriteLine("LIMITE CHEQUE ESPECIAL");
+                    Console.WriteLine($"SEU LIMITE È {_limiteChequeEspecial}");
                 }
                 if (tipoConta == 3)
                 {
-                    Console.WriteLine("MOSTRAR SALDO CONTA POUPANÇA");
+                    Console.WriteLine("SALDO CONTA POUPANÇA");
                 }
+                Console.ReadKey();
+                Console.Clear();
+                Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
+                cont++;
                 break;
             case 0:
                 Console.WriteLine("VOCÊ REALMENTE DESEJA ENCERRAR?");
@@ -96,12 +146,15 @@ public class Contas {
                     Program.inicializarModulos(Tuple.Create(tipoConta, saldo, _limiteChequeEspecial));
                 }
                 break;
+                
         }
+
     }
+}
 
 
 
-    public static void ContaCorrenteComChequeEspecial(Tuple<int, double, double> tuplaResultado) {
+  /*  public static void ContaCorrenteComChequeEspecial(Tuple<int, double, double> tuplaResultado) {
         int tipoConta = tuplaResultado.Item1;
         double saldo = tuplaResultado.Item2;
         double limiteChequeEspecial = tuplaResultado.Item3;
@@ -210,4 +263,4 @@ public class Contas {
                 break;
         }
     }
-}
+}*/
