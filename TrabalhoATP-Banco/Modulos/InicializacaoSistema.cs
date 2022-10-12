@@ -8,7 +8,7 @@ namespace TrabalhoATP_Banco.Modulos
 {
     public class InicializacaoSistema
     {
-        public static Tuple<int, double, double> start()
+        public static Tuple<int, double, double, int, double> start()
         {
             
             int tipoConta;
@@ -28,10 +28,13 @@ namespace TrabalhoATP_Banco.Modulos
                 Console.Write("QUAL LIMITE PARA CHEQUE ESPECIAL: ");
                 limiteChequeEspecial = double.Parse(Console.ReadLine());
             }
+            int cont = 0;
+            double saldoDevedorChequeEspecial = 0;
+
             Console.Clear();
 
             
-            return Tuple.Create(tipoConta, saldo, limiteChequeEspecial);
+            return Tuple.Create(tipoConta, saldo, limiteChequeEspecial, cont, saldoDevedorChequeEspecial);
         }
     }
 }
